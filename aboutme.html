@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript,Stephen,Blog">
+  <meta name="description" content="欢迎光临Stephen的博客～get whatever you need!">
+  <meta name="author" content="Stephen Chang">
+
+  <!--Jquery-->
+  <script src="js/jquery-1.12.3.min.js"></script>
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+
+
+  <!--main.js-->
+  <script src="main.js"></script>
+
+  <!--dynamic sildbar-->
+  <!--script src="dynamic.js"></script-->
+
+  <link rel="stylesheet" href="index.css">
+  <title>Stephen_Blog</title>
+</head>
+<body>
+  <!--head-->
+  <div class="bloghead">
+    <div id="intro">
+      <h1 id="title">StephenBlog<span><img src="images/pull-down-menu.png" width="35px" height="35px" style="margin-left:5px;"></span></h1>
+      <p>欢迎光临Stephen的博客～get whatever you need!</p>
+      <div id="mainpulldown">
+        <p id="pulldownbtn"><strong>This is a Menu😄</strong></p>
+        <div id="pulldownmenu">
+          <div id="mainpage" class="pulldownmenudiv"><h4 class="pulldowntext">主页</h4></div>
+          <div id="aboutme" class="pulldownmenudiv"><h4 class="pulldowntext">About Me</h4></div>
+          <!--div id="music" class="pulldownmenudiv"><h4 class="pulldowntext">Music</h4></div-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--head end-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="postdate-aboutme"><h4>2016-5-27</h4></div>
+        <div class="box-left">
+          <h1>关于我</h1>
+          <img id="headimg" class="img-circle" src="images/IMG_0049.jpg">
+          <p>Email : zhangyingheng1995@hotmail.com</p>
+
+          <hr />
+
+          <p>Github : Stephen-Z</p>
+
+          <hr />
+
+          <p>QQ : 316865310</p>
+
+          <hr />
+
+          <p>本科生，现就读广州航海学院。努力爬进全栈工程师的大坑～～加油干巴爹</p>
+        </div>
+        <div id="comment" class="box-left">
+              <div id="disqus_thread"></div>
+              <script>
+              /**
+              * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+              * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+              */
+              /*
+              var disqus_config = function () {
+              this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+              this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//stephenchang.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer id="foot" style="margin-top:100px;"><p style="margin-top:50px;margin-left:80px;">&copy;2016 Stephen<br>Powered by Html 5, design by Stephen</p></footer>
+</body>
+</html>

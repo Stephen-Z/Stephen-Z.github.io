@@ -1,0 +1,117 @@
+body{
+  background-image: url('images/background2.png');
+  background-repeat: no-repeat;
+  background-size: 100% 300%;
+  background-attachment: fixed;
+}
+.box-left{
+  margin-top: 10px;
+  background-color: rgb(10, 10, 10);
+  padding: 20px;
+  opacity: 0.7;
+  border-radius: 10px;
+  color: white;
+}
+.box-right{
+  margin-top: 10px;
+  margin-left: 20px;
+  background-color: rgb(10, 10, 10);
+  padding: 20px;
+  opacity: 0.6;
+  border-radius: 5px;
+  width: 280px;
+}
+.bloghead{
+  background-image: url('images/biglogo1.jpg');
+
+  height: 370px;
+  background-position:-0px -700px;
+  background-size: 100% 150%;
+}
+#foot{
+  background-color: rgb(10, 10, 10);
+  z-index: 1;
+  color: rgb(80,80, 80);
+  position: absolute;
+  height: 120px;
+  width: 100%;
+}
+#intro{
+  position: absolute;
+  color: rgb(40, 25, 32);
+  top: 12%;
+  left: 8%;
+  z-index: 2;
+}
+#pulldownbtn{
+  cursor: pointer;
+}
+.pulldownmenudiv{
+  opacity: 0.6;
+  background-color: black;
+  width: 130px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#mainpage{
+  position: absolute;
+  top: 1%;
+}
+#aboutme{
+  position: absolute;
+  top: 30%;
+}
+#music{
+  position: absolute;
+  top: 60%;
+}
+.pulldowntext{
+  margin-top: 5px;
+}
+#pulldownmenu{
+  width: 180px;
+  height: 140px;
+  z-index: 2;
+  position: absolute;
+  top: 15%;
+  display: none;
+}
+#mainpulldown{
+  width: 180px;
+  height: 150px;
+  position: absolute;
+}
+.postdate{
+  margin-top: 40px;
+  color: rgb(160, 160, 160);
+}
+.postdate-aboutme{
+  margin-top: 40px;
+  color: rgb(160, 160, 160);
+}
+.sidebartitle{
+  margin-top: 40px;
+  margin-left: 20px;
+  color: rgb(160, 160, 160);
+}
+
+#postrecently{
+  height: 150px;
+}
+.actived{
+  color: grey;
+}
+.navgator{
+  color: white;
+  margin: 0.1px;
+  cursor: pointer;
+}
+#headimg{
+  width: 200px;
+  height: 200px;
+  margin-bottom: 30px;
+  margin-left: 35%;
+}

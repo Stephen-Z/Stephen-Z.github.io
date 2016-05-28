@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript,Stephen,Blog">
+  <meta name="description" content="欢迎光临Stephen的博客～get whatever you need!">
+  <meta name="author" content="Stephen Chang">
+
+  <!--Jquery-->
+  <script src="js/jquery-1.12.3.min.js"></script>
+
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+
+
+  <!--main.js-->
+  <script src="main.js"></script>
+
+  <!--dynamic sildbar-->
+  <!--script src="dynamic.js"></script-->
+
+  <link rel="stylesheet" href="index.css">
+  <title>Stephen_Blog</title>
+</head>
+<body>
+  <!--head-->
+  <div class="bloghead">
+    <div id="intro">
+      <h1 id="title">StephenBlog<span><img src="images/pull-down-menu.png" width="35px" height="35px" style="margin-left:5px;"></span></h1>
+      <p>欢迎光临Stephen的博客～get whatever you need!<br>有什么疑问可以去aboutme页面留言</p>
+      <div id="mainpulldown">
+        <p id="pulldownbtn"><strong>This is a Menu😄</strong></p>
+        <div id="pulldownmenu">
+          <div id="mainpage" class="pulldownmenudiv"><h4 class="pulldowntext">主页</h4></div>
+          <div id="aboutme" class="pulldownmenudiv"><h4 class="pulldowntext">About Me</h4></div>
+          <!--div id="music" class="pulldownmenudiv"><h4 class="pulldowntext">Music</h4></div-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--head end-->
+  <div class="container">
+    <div class="row">
+      <!--article begin-->
+      <div class="col-md-8" id="mainrow">
+        <div id="tmux使用手册" class="articles linux">
+            <div class="postdate"><h4>2016-5-27<span style="margin-left:3%" class="sorts">后端技术>>Linux</span></h4></div>
+            <div class="box-left">
+              <h2 class="articletitle">tmux使用手册</h2>
+              <p>tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权。使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机；当然其功能远不止于此，下面是关于tmux的使用手册</p>
+              <p>tmux #开启tmux</p>
+
+              <p>tmux ls #显示已有tmux列表（C-b s）</p>
+
+              <p>tmux attach-session -t 数字 #选择tmux</p>
+
+              <p>C-b c 创建一个新的窗口</p>
+
+              <p>C-b n 切换到下一个窗口</p>
+
+              <p>C-b p 切换到上一个窗口</p>
+
+              <p>C-b l 最后一个窗口,和上一个窗口的概念不一样哟,谁试谁知道</p>
+
+              <p>c-b w 通过上下键选择当前窗口中打开的会话</p>
+
+              <p>C-b 数字 直接跳到你按的数字所在的窗口</p>
+
+              <p>C-b &amp; 退出当前窗口</p>
+
+              <p>C-b d 临时断开会话 断开以后,还可以连上的哟:) （退出lalal）</p>
+
+              <p>C-b " 分割出来一个窗口</p>
+
+              <p>C-b % 分割出来一个窗口</p>
+
+              <p>C-b o 在小窗口中切换</p>
+
+              <p>C-b (方向键)</p>
+
+              <p>C-b ! 关闭所有小窗口</p>
+
+              <p>C-b x 关闭当前光标处的小窗口</p>
+
+              <p>C-b t 钟表</p>
+
+              <p>C-b pageup/pagedo</p>
+            </div>
+        </div>
+        <div id="Nginx编译安装" class="articles linux">
+          <div class="postdate"><h4>2016-5-24<span style="margin-left:3%" class="sorts">后端技术>>Linux</span></h4></div>
+          <div class="box-left">
+            <h2 class="articletitle">Nginx编译安装</h2>
+            <p>一、安装nginx时必须先安装相应的编译工具</p>
+
+            <p>yum -y install gcc gcc-c++ autoconf automake</p>
+
+            <pre><code>yum -y install zlib zlib-devel openssl openssl-devel pcre-devel
+            </code></pre>
+
+            <p>建立nginx 组</p>
+
+            <p>groupadd -r nginx</p>
+
+            <pre><code>useradd -s /sbin/nologin -g nginx -r nginx
+
+              id nginx
+            </code></pre>
+
+            <p>zlib:nginx提供gzip模块，需要zlib库支持</p>
+
+            <p>openssl:nginx提供ssl功能</p>
+
+            <p>pcre:支持地址重写rewrite功能</p>
+
+            <p>二、tar -zxvf nginx-1.2.8.tar.gz</p>
+
+            <p>三、cd nginx-1.2.8</p>
+
+            <p>四、./configure \</p>
+
+              <pre><code>--prefix=/usr \
+
+                --sbin-path=/usr/sbin/nginx \
+
+                --conf-path=/etc/nginx/nginx.conf \
+
+                --error-log-path=/var/log/nginx/error.log \
+
+                --pid-path=/var/run/nginx/nginx.pid \
+
+                --user=nginx \
+
+                --group=nginx \
+
+                --with-http_ssl_module \
+
+                --with-http_flv_module \
+
+                --with-http_gzip_static_module \
+
+                --http-log-path=/var/log/nginx/access.log \
+
+                --http-client-body-temp-path=/var/tmp/nginx/client \
+
+                --http-proxy-temp-path=/var/tmp/nginx/proxy \
+
+                --http-fastcgi-temp-path=/var/tmp/nginx/fcgi \
+
+                --with-http_stub_status_module
+              </code></pre>
+
+              <p>五、make &amp;&amp; make install</p>
+
+              <p>exp:
+                Nginx编译安装
+                configure arguments: --prefix=/usr/local/nginx --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --pid-path=/var/run/nginx/nginx.pid --user=nginx --group=nginx --with-http_ssl_module --with-http_flv_module --with-http_gzip_static_module --http-log-path=/var/log/nginx/access.log --http-client-body-temp-path=/var/tmp/nginx/client --http-proxy-temp-path=/var/tmp/nginx/proxy --http-fastcgi-temp-path=/var/tmp/nginx/fcgi --with-http_stub_status_module --with-http_sub_module --with-zlib=/root/Fromlocal/nginx/zlib-1.2.8 --with-openssl=/root/Fromlocal/nginx/openssl-1.0.1r</p>
+          </div>
+        </div>
+        <div id="Chart.js参数介绍" class="articles javascript">
+          <div class="postdate"><h4>2016-5-23<span style="margin-left:3%" class="sorts">前端技术>>Javascript</span></h4></div>
+          <div class="box-left">
+            <h3 class="articletitle">Chart.js参数介绍</h3>
+            <a href='http://www.chartjs.org'>官网地址http://www.chartjs.org</a>
+            <p>chart.js是一个目前比较流行的一款开源的轻量的多样化的制图框架。想用好它的话不妨了解一下它的参数。</p>
+            <div id="chart.js-code">
+              <div style="background:#fdfdfd;color:black;"></div>
+              <div class="source" style="font-family: '[object HTMLOptionElement]', Consolas, 'Lucida Console', 'Courier New'; color: rgb(208, 208, 208); background-color: rgb(30, 30, 39);"><span style="color: rgb(106, 184, 37); font-weight: bold;">var</span> <span style="color: rgb(208, 208, 208);">lineChartData</span> <span style="color: rgb(208, 208, 208);">=</span> <span style="color: rgb(208, 208, 208);">{</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">labels</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(208, 208, 208);">[</span><span style="color: rgb(237, 157, 19);">&quot;09/12&quot;</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(237, 157, 19);">&quot;09/13&quot;</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(237, 157, 19);">&quot;09/14&quot;</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(237, 157, 19);">&quot;09/15&quot;</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(237, 157, 19);">&quot;09/16&quot;</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(237, 157, 19);">&quot;09/17&quot;</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(237, 157, 19);">&quot;09/18&quot;</span><span style="color: rgb(208, 208, 208);">],</span> <span style="color: rgb(153, 153, 153); font-style: italic;">//X轴 坐标</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">datasets</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(208, 208, 208);">[</span><br> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">{</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">fillColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;transparent&quot;</span><span style="color: rgb(208, 208, 208);">,</span> <span style="color: rgb(153, 153, 153); font-style: italic;">// 背景色</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">strokeColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#ef7c1f&quot;</span><span style="color: rgb(208, 208, 208);">,</span> <span style="color: rgb(153, 153, 153); font-style: italic;">// 线</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#ef7c1f&quot;</span><span style="color: rgb(208, 208, 208);">,</span> <span style="color: rgb(153, 153, 153); font-style: italic;">// 点</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointStrokeColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#fff&quot;</span><span style="color: rgb(208, 208, 208);">,</span> <span style="color: rgb(153, 153, 153); font-style: italic;">// 点的包围圈</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">data</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(208, 208, 208);">[</span><span style="color: rgb(54, 119, 169);">120</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">140</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">110</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">130</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">150</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">170</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">160</span><span style="color: rgb(208, 208, 208);">]</span> <span style="color: rgb(153, 153, 153); font-style: italic;">// Y轴坐标</span><br> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">},</span><br> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">{</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">fillColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;transparent&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">strokeColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#3dc448&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#3dc448&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointStrokeColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#fff&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">data</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(208, 208, 208);">[</span><span style="color: rgb(54, 119, 169);">80</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">90</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">80</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">100</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">110</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">130</span><span style="color: rgb(208, 208, 208);">,</span><span style="color: rgb(54, 119, 169);">100</span><span style="color: rgb(208, 208, 208);">]</span><br> &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">}</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">]</span><br><br><span style="color: rgb(208, 208, 208);">}</span><br><span style="color: rgb(106, 184, 37); font-weight: bold;">var</span> <span style="color: rgb(208, 208, 208);">defaults</span> <span style="color: rgb(208, 208, 208);">=</span> <span style="color: rgb(208, 208, 208);">{</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">//Boolean - If we show the scale above the chart data &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleOverlay</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">false</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">//Boolean - If we want to override with a hard coded scale</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleOverride</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">false</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">//** Required if scaleOverride is true **</span><br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">//Number - The number of steps in a hard coded scale</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleSteps</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">null</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">//Number - The value jump in the hard coded scale</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleStepWidth</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">20</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// Y 轴的起始值</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleStartValue</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">null</span><span style="color: rgb(208, 208, 208);">,</span><br><br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// Y/X轴的颜色</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleLineColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;rgba(0,0,0,.1)&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// X,Y轴的宽度</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleLineWidth</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">1</span><span style="color: rgb(208, 208, 208);">,</span><br><br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 刻度是否显示标签, 即Y轴上是否显示文字</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleShowLabels</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">true</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// Y轴上的刻度,即文字</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleLabel</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;&lt;%=value%&gt;&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 字体</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleFontFamily</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;&#39;Arial&#39;&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 文字大小</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleFontSize</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">12</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 文字样式</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleFontStyle</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;normal&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 文字颜色</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleFontColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;#666&quot;</span><span style="color: rgb(208, 208, 208);">,</span> &nbsp; &nbsp;<br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 是否显示网格</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleShowGridLines</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">false</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 网格颜色</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleGridLineColor</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;rgba(0,0,0,.05)&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 网格宽度</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">scaleGridLineWidth</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">2</span><span style="color: rgb(208, 208, 208);">,</span> &nbsp; &nbsp;<br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 是否使用贝塞尔曲线? 即:线条是否弯曲</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">bezierCurve</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">false</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 是否显示点数</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointDot</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">true</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 圆点的大小</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointDotRadius</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">8</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 圆点的笔触宽度, 即:圆点外层白色大小</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">pointDotStrokeWidth</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">2</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 数据集行程</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">datasetStroke</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">true</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 线条的宽度, 即:数据集</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">datasetStrokeWidth</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">2</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 是否填充数据集</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">datasetFill</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">false</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 是否执行动画</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">animation</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">true</span><span style="color: rgb(208, 208, 208);">,</span><br><br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 动画的时间</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">animationSteps</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(54, 119, 169);">60</span><span style="color: rgb(208, 208, 208);">,</span><br> &nbsp; &nbsp;<br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 动画的特效</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">animationEasing</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(237, 157, 19);">&quot;easeOutQuart&quot;</span><span style="color: rgb(208, 208, 208);">,</span><br><br> &nbsp; &nbsp;<span style="color: rgb(153, 153, 153); font-style: italic;">// 动画完成时的执行函数</span><br> &nbsp; &nbsp;<span style="color: rgb(208, 208, 208);">onAnimationComplete</span> <span style="color: rgb(208, 208, 208);">:</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">null</span><br> &nbsp; &nbsp;<br><span style="color: rgb(208, 208, 208);">}</span><br><span style="color: rgb(106, 184, 37); font-weight: bold;">var</span> <span style="color: rgb(208, 208, 208);">myLine</span> <span style="color: rgb(208, 208, 208);">=</span> <span style="color: rgb(106, 184, 37); font-weight: bold;">new</span> <span style="color: rgb(208, 208, 208);">Chart</span>(<span style="color: rgb(36, 144, 157);">document</span><span style="color: rgb(208, 208, 208);">.</span><span style="color: rgb(208, 208, 208);">getElementById</span>(<span style="color: rgb(237, 157, 19);">&quot;canvas&quot;</span><span style="color: rgb(208, 208, 208);">).</span><span style="color: rgb(208, 208, 208);">getContext</span>(<span style="color: rgb(237, 157, 19);">&quot;2d&quot;</span><span style="color: rgb(208, 208, 208);">)).</span><span style="color: rgb(208, 208, 208);">Line</span>(<span style="color: rgb(208, 208, 208);">lineChartData</span><span style="color: rgb(208, 208, 208);">,</span> <span style="color: rgb(208, 208, 208);">defaults</span>);<br></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--article end-->
+      <!--sidebar begin-->
+      <div class="col-md-4">
+        <div id="sort">
+          <div class="sidebartitle"><h4>分类</h4></div>
+          <div class="box-right" id="sortbox" style="color:white;">
+            <p><strong>后端技术</strong></p>
+            <ul>
+              <li style="cursor:pointer;" id="list-linux" class="select">Linux</li>
+            </ul>
+            <p><strong>前端技术</strong></p>
+            <ul>
+              <li style="cursor:pointer;" id="list-javascript" class="select">Javascript</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="sidebartitle"><h4>导航</h4></div>
+          <div class="box-right" id="postrecently"></div>
+        </div>
+
+        <div id="friendlink">
+          <div class="sidebartitle"><h4>友情链接</h4></div>
+          <div class="box-right" id="friendlinkbox"></div>
+        </div>
+      </div>
+
+      <!--sidebar end-->
+    </div>
+  </div>
+  <footer id="foot" style="margin-top:100px;"><p style="margin-top:50px;margin-left:80px;">&copy;2016 Stephen<br>Powered by Html 5, design by Stephen</p></footer>
+</body>
+</html>
