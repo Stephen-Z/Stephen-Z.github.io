@@ -80,8 +80,26 @@ function dynamicsort(){
     var allarticle=document.getElementsByClassName('articles');
     for(var i=0;i<allarticle.length;i++){
       var anarticle=allarticle.item(i);
-      console.log(anarticle.classList.contains('javascript'));
       if(!anarticle.classList.contains('javascript')){
+        deletenodes.push(anarticle);
+      }
+    }
+    for(var j=0;j<deletenodes.length;j++){
+      var articleparent=deletenodes[j].parentNode;
+      articleparent.removeChild(deletenodes[j]);
+    }
+    deletenodes=[];
+    dynamic();
+  });
+  $('#list-github').click(function(){
+    $('.select').removeClass('actived');
+    $('#list-github').addClass('actived');
+    document.getElementById('mainrow').innerHTML=recovery;
+    document.title='Stephen_Blog(github)';
+    var allarticle=document.getElementsByClassName('articles');
+    for(var i=0;i<allarticle.length;i++){
+      var anarticle=allarticle.item(i);
+      if(!anarticle.classList.contains('github')){
         deletenodes.push(anarticle);
       }
     }
