@@ -47,6 +47,26 @@
     <div class="row">
       <!--article begin-->
       <div class="col-md-8" id="mainrow">
+        <div id="使用ssh-key实现免密码登录远程服务器" class="articles linux">
+          <div class="postdate"><h4>2016-5-31<span style="margin-left:3%" class="sorts">后端技术>>Linux</span></h4></div>
+          <div class="box-left">
+            <h2 class="articletitle">使用ssh-key实现免密码登录远程服务器</h2>
+            <p><em>作者：stephen chang</em></p>
+            <p>随着云服务器和vps的流行，越来越多人拥有自己的云服务器或者vps。那么记住密码就是一个比较会令人头疼的问题。所以博主特地在此教大家如何使用ssh－key进行免密码登录。</p>
+
+            <p>不如现在要从A主机登录到远程的B主机：</p>
+
+            <ol>
+            <li>第一步是在A主机上面生成ssh－key的公钥和私钥。运行以下命令一直回车即可。<br>这条命了执行完之后会在~/.ssh目录下生成id_rsa和id_rsa.pub两个文件。</li>
+            <img src="images/sshkey/keygen.png" style="margin-bottom:20px;width:80%;">
+            <li>在B主机上配置authorized_keys文件。注意要设置好权限。</li>
+            <img src="images/sshkey/authorized.png" style="margin-bottom:20px;width:80%;"
+            </ol>
+
+
+            <p>完成好这两部之后就可以在A主机上自由登录B主机了，再不会被密码所扰。</p>
+          </div>
+        </div>
         <div id="使用自定义域名访问github pages" class="articles github">
           <div class="postdate"><h4>2016-5-28<span style="margin-left:3%" class="sorts">前端技术>>Github</span></h4></div>
           <div class="box-left">
