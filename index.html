@@ -47,6 +47,27 @@
     <div class="row">
       <!--article begin-->
       <div class="col-md-8" id="mainrow">
+        <div id="OPENWRT系统路由器+MENTOHUST实现锐捷认证和校园网wifi" class="articles linux">
+          <div class="postdate"><h4>2016-6-8<span style="margin-left:3%" class="sorts">后端技术>>Linux</span></h4></div>
+          <div class="box-left">
+            <h2 class="articletitle">OPENWRT系统路由器+MENTOHUST实现锐捷认证和校园网wifi</h2>
+            <p><em>作者：Stephen</em></p>
+            <hr />
+            <img src="images/router.jpg" style="margin-bottom:20px;width:80%;">
+            <p>相信现在的校园网都有认证客户端，例如锐捷、赛尔之类的。这样一来一般的路由器基本算是报废了。</p>
+            <p>不过最近有一个路由器系统很火叫openwrt，之所以这么火是因为它本身是一个嵌入式的linux系统，而且还有着强大的包管理系统——opkg。所以只要你路由器性能够强劲，可以刷入openwrt，那几乎无所不能～</p>
+            <p>要实现路由器锐捷认证</p>
+            <ol>
+              <li>你需要一个能刷入openwrt并且不会中途死机的路由器和一部可以正常用锐捷认证上网的电脑。意味着你在选择路由器的时候要注意路由器的处理器、闪存还有ROM这些参数。不过如果你动手能力很强，你还可以尝试硬改路由器，换一个大一点的flash和rom。下图是博主刚入手的邪教（小米）路由器3的参数。<img src="images/xiaomi3detial.png" style="margin-bottom:20px;width:80%;"><br>如果你是没有什么刷机经验的年轻人，建议直接入手小米路由器3，因为它自带的就是openwrt阉割版系统。虽然是阉割版但是可以支持锐捷锐捷认证相信已经满足了大多数人的需求～想看看自己的系统支不支持openwrt可以去openwrt的官网<a href="https://openwrt.org/">https://openwrt.org/</a>查一下。刷机方法不同的路由器不一样，可以自己google～</li>
+              <li>刷好openwrt以后，使用ssh登录到路由器的openwrt。这里再附加一个利用小米路由器3固件漏洞开ssh的方法<a href="http://bbs.xiaomi.cn/t-12871805">http://bbs.xiaomi.cn/t-12871805</a><img src="images/sshlogin.png" style="margin-bottom:20px;width:80%;"><br>对于windows用户，可以使用putty来登录。</li>
+              <li>登录好了以后使用opkg install mentohust就可以安装mentohust。不过在此之前，如果你刷入的openwrt没有自带luci，你还需要先手动安装luci。luci是一个路由器管理的网页界面。<img src="images/luci.png" style="margin-bottom:20px;width:80%;"><br></li>
+              <li>以上步骤都做好了以后，进入路由器的管理界面，找到mac地址克隆这个选项，把你电脑上用来连接锐捷的网卡的mac地址填进去点克隆。<img src="images/macglone.png" style="margin-bottom:20px;width:80%;"></li>
+              <li>回到刚刚ssh登录的页面运行安装好的mentohust。以下是参数列表，用户名、密码、IP地址、子网掩码、客户端版本号、网卡名这些参数都是必须的。<img src="images/argumentlist.png" style="margin-bottom:20px;width:80%;"></li>
+            </ol>
+            <p>完成以上步骤，看到类似下图的画面之后，你的路由器应该已经起飞～祝你上网愉快。</p>
+            <img src="images/work.png" style="margin-bottom:20px;width:80%;">
+          </div>
+        </div>
         <div id="使用ssh-key实现免密码登录远程服务器" class="articles linux">
           <div class="postdate"><h4>2016-5-31<span style="margin-left:3%" class="sorts">后端技术>>Linux</span></h4></div>
           <div class="box-left">
