@@ -107,9 +107,7 @@ body{
   margin: 0.1px;
   cursor: pointer;
 }
-#headimg{
-  width: 200px;
-  height: 200px;
-  margin-bottom: 30px;
-  margin-left: 35%;
+
+.table > tbody > tr > td {
+    vertical-align: middle;
 }
